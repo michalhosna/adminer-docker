@@ -1,0 +1,26 @@
+version: '2.4'
+
+services:
+    adminer:
+        build: ../4
+        ports:
+            - 8080:8000
+        volumes:
+          - ./4/index.php:/var/adminer/index.php
+        environment:
+            ADMINER_DB: adminer
+            ADMINER_DRIVER: pgsql
+            ADMINER_PASSWORD: adminer
+            ADMINER_SERVER: postgres
+            ADMINER_USERNAME: adminer
+            ADMINER_AUTOLOGIN: 1
+            ADMINER_NAME: This will be in the title!
+
+
+    postgres:
+        image: postgres:10-alpine
+        restart: on-failure
+        environment:
+            POSTGRES_DB: adminer
+            POSTGRES_USER: adminer
+            POSTGRES_PASSWORD: adminer
