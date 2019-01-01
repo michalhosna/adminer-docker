@@ -2,6 +2,7 @@
 
 [Adminer](https://www.adminer.org) docker image with extended env variables for autologin.
 
+Docker hub: http://hub.docker.com/r/michalhosna/adminer
 
 ## Exapmle:
 ```yaml
@@ -9,7 +10,7 @@ version: '2.4'
 
 services:
     adminer:
-        build: TODO
+        build: http://hub.docker.com/r/michalhosna/adminer:4.7.0
         ports:
             - 8080:8000
         volumes:
