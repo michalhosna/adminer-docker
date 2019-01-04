@@ -10,7 +10,7 @@ version: '2.4'
 
 services:
     adminer:
-        build: http://hub.docker.com/r/michalhosna/adminer:4.7.0
+        build: http://hub.docker.com/r/michalhosna/adminer:master
         ports:
             - 8080:8000
         volumes:
@@ -36,6 +36,16 @@ services:
 
 ```
 
+## Tags
+The builds are always build without changing the build-args
+
+- The stable: `master` - always master of the repo, prefered to use, it should be to most up-to-date and stable
+- Locke commit, like `8dc4d2b8b484ed08d041066fadc6a832ef57a1f6` or similar 
+- Adminer version, like `4.7.0` 
+- Adminer version + commit `4.7.0-8dc4d2b`, the same as commit hash, only with better readability of version
+
+No latest tag, if it shows up in the docker hub i fucked up (it's to easy), and you cannot completely delete tag from docker hub, you shouldn't use it.
+
 ## Guide
 You can preffil any/all/none of the environment variables. 
 If you prefill all environment variables including `ADMINER_AUTOLOGIN`, user will be autologed and won't see the login screen at all.
@@ -49,7 +59,6 @@ I hope those speak for themselves
 ### `ADMINER_DRIVER`
 Value from driver select
 
-
 Current possible values are:
 - `sqlite`
 - `sqlite2`
@@ -62,7 +71,7 @@ Current possible values are:
 - `elastic`
 - `clickhouse`
 
-(This image was not tested will all of them)
+(This image was not tested with all of them)
 
 ### `ADMINER_AUTOLOGIN`
 If this variable exists (even if it's empty), adminer will try to autologin, no matter if all fields are filled
