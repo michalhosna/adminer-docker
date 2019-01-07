@@ -27,6 +27,8 @@ RUN curl -L https://github.com/vrana/adminer/releases/download/v${ADMINER_VERSIO
 
 COPY index.php /var/adminer/index.php
 
+EXPOSE 8080
+
 USER adminer
-CMD [ "php", "-S", "[::]:8000", "-t", "/var/adminer" ]
+CMD [ "php", "-S", "[::]:8080", "-t", "/var/adminer" ]
 
