@@ -13,8 +13,6 @@ services:
         image: michalhosna/adminer:master
         ports:
             - 8080:8080
-        volumes:
-          - ./4/index.php:/var/adminer/index.php
         environment:
             ADMINER_DB: adminer
             ADMINER_DRIVER: pgsql
