@@ -10,9 +10,9 @@ version: '2.4'
 
 services:
     adminer:
-        build: http://hub.docker.com/r/michalhosna/adminer:master
+        image: michalhosna/adminer:master
         ports:
-            - 8080:8000
+            - 8080:8080
         volumes:
           - ./4/index.php:/var/adminer/index.php
         environment:
