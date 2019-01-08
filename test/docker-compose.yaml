@@ -4,9 +4,7 @@ services:
     adminer:
         build: ../4
         ports:
-            - 8080:8000
-        volumes:
-          - ./4/index.php:/var/adminer/index.php
+            - 8080:8080
         environment:
             ADMINER_DB: adminer
             ADMINER_DRIVER: pgsql
