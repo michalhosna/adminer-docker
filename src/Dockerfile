@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.11
 
 RUN	addgroup -S adminer && \
     adduser -S -G adminer adminer && \

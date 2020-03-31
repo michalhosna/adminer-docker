@@ -10,7 +10,7 @@ version: '2.4'
 
 services:
     adminer:
-        image: michalhosna/adminer:master
+        image: michalhosna/adminer
         ports:
             - 8080:8080
         environment:
@@ -24,7 +24,7 @@ services:
 
 
     postgres:
-        image: postgres:10-alpine
+        image: postgres:11-alpine
         restart: on-failure
         environment:
             POSTGRES_DB: adminer
@@ -35,14 +35,14 @@ services:
 ```
 
 ## Tags
-The builds are always build without changing the build-args
 
-- The stable: `master` - always master of the repo, prefered to use, it should be to most up-to-date and stable
-- Locke commit, like `8dc4d2b8b484ed08d041066fadc6a832ef57a1f6` or similar 
-- Adminer version, like `4.7.0` 
-- Adminer version + commit `4.7.0-8dc4d2b`, the same as commit hash, only with better readability of version
+```
+michalhosna/adminer:4.7.6-en_v1
+```
 
-No latest tag, if it shows up in the docker hub i fucked up (it's to easy), and you cannot completely delete tag from docker hub, you shouldn't use it.
+- `4.7.6` = Adminer version
+- `en` = Adminer flavour (as in https://github.com/vrana/adminer/releases)
+- `v1` = Image version, when something else than adminer version in this repository changes 
 
 ## Guide
 You can preffil any/all/none of the environment variables. 
