@@ -22,9 +22,11 @@ function adminer_object(): Adminer
 
             if ($this->getEnv('ADMINER_AUTOLOGIN')) {
                 echo script('
-                    document.addEventListener(\'DOMContentLoaded\', function () {
-                        document.forms[0].submit()
-                    })
+                    if (document.querySelector(\'#content > div.error\') == null) {
+                        document.addEventListener(\'DOMContentLoaded\', function () {
+                            document.forms[0].submit()
+                        })
+                    }
                 ');
             }
         }
