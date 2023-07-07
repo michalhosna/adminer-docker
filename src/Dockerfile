@@ -14,6 +14,7 @@ RUN apk add --no-cache \
     php7-pdo_odbc \
     php7-pdo_pgsql \
     php7-pdo_sqlite \
+    php7-pdo_dblib \
     php7-session
 
 WORKDIR /var/adminer
