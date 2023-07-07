@@ -14,13 +14,14 @@ RUN apk add --no-cache \
     php7-pdo_odbc \
     php7-pdo_pgsql \
     php7-pdo_sqlite \
+    php7-pdo_dblib \
     php7-session
 
 WORKDIR /var/adminer
 
-ARG ADMINER_VERSION=4.7.0
+ARG ADMINER_VERSION=4.8.1
 ARG ADMINER_FLAVOUR="-en"
-ARG ADMINER_CHECKSUM="d2884278a3f331673c9fe58d3456db875a48270fd7b7ba37492d132b074d0eaa"
+ARG ADMINER_CHECKSUM="4ec36be619bb571e2b5a5d4051bfe06f3fcadb3004969b993f2535f6ce28116b"
 
 RUN curl -L https://github.com/vrana/adminer/releases/download/v${ADMINER_VERSION}/adminer-${ADMINER_VERSION}${ADMINER_FLAVOUR}.php -o adminer.php && \
     echo "${ADMINER_CHECKSUM}  adminer.php"|sha256sum -c -
