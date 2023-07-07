@@ -37,10 +37,10 @@ services:
 ## Tags
 
 ```
-michalhosna/adminer:4.7.7-en_v1
+michalhosna/adminer:4.8.1-en_v1
 ```
 
-- `4.7.7` = Adminer version
+- `4.8.1` = Adminer version
 - `en` = Adminer flavour (as in https://github.com/vrana/adminer/releases)
 - `v1` = Image version, when something else than adminer version in this repository changes 
 
