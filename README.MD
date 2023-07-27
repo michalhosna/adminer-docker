@@ -4,9 +4,9 @@
 
 Docker hub: http://hub.docker.com/r/michalhosna/adminer
 
-## Exapmle:
+## Example:
 ```yaml
-version: '2.4'
+version: '3.9'
 
 services:
     adminer:
@@ -30,24 +30,23 @@ services:
             POSTGRES_DB: adminer
             POSTGRES_USER: adminer
             POSTGRES_PASSWORD: adminer
-
-
 ```
 
 ## Tags
 
 ```
-michalhosna/adminer:4.7.7-en_v1
+michalhosna/adminer:4.8.1-en_v1
 ```
 
-- `4.7.7` = Adminer version
+- `4.8.1` = Adminer version
 - `en` = Adminer flavour (as in https://github.com/vrana/adminer/releases)
 - `v1` = Image version, when something else than adminer version in this repository changes 
 
 ## Guide
-You can preffil any/all/none of the environment variables. 
-If you prefill all environment variables including `ADMINER_AUTOLOGIN`, user will be autologed and won't see the login screen at all.
-If you prefill only some variables, user will be presented with form with prefiled (and disabled) fields from env vars.
+
+You can prefill any, all, or none of the environment variables.
+If you prefill all environment variables including `ADMINER_AUTOLOGIN`, the user will be auto-logged and won't see the login screen at all.
+If you prefill only some variables, the user will be presented with a form with prefilled (and disabled) fields from env vars.
 
 ## Environment Variables
 
